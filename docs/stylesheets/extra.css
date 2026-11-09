@@ -1,0 +1,22 @@
+/* ===== 自定义样式，按需删改 ===== */
+
+/* 正文最大宽度：默认 61rem，放宽一点适合代码多的笔记 */
+.md-grid {
+  max-width: 70rem;
+}
+
+/* 中文字体渲染更清晰 */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 表格里的行内代码不要太大 */
+.md-typeset table code {
+  font-size: 0.7rem;
+}
+
+/* 首页卡片高度对齐 */
+.md-typeset .grid.cards > ul > li {
+  border-radius: 0.4rem;
+}

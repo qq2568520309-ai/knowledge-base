@@ -1,0 +1,6 @@
+mkdocs>=1.6,<2.0
+mkdocs-material>=9.8,<10.0
+# 可选插件：显示“最后更新于”，启用时把 mkdocs.yml 里对应行取消注释
+# mkdocs-git-revision-date-localized-plugin>=1.3
+# 可选插件：压缩 HTML
+# mkdocs-minify-plugin>=0.8

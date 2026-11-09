@@ -1,0 +1,135 @@
+# ============================================================
+#  MkDocs + Material 配置
+#  本地预览：mkdocs serve     构建：mkdocs build
+#  部署到 GitHub Pages：推送到 main 分支后由 Actions 自动完成
+# ============================================================
+
+site_name: 我的知识库
+site_description: 个人知识管理 · 持续更新
+site_author: WuYihui
+# ↓ 改成你的实际地址；项目站结尾必须带斜杠
+site_url: https://qq2568520309-ai.github.io/knowledge-base/
+
+repo_name: qq2568520309-ai/knowledge-base
+repo_url: https://github.com/qq2568520309-ai/knowledge-base
+edit_uri: edit/main/docs/          # 每页右上角的“编辑此页”链接
+
+copyright: Copyright &copy; 2026 WuYihui
+
+theme:
+  name: material
+  language: zh                    # 界面中文化
+  # logo: assets/logo.png
+  # favicon: assets/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Noto Sans SC
+    code: Fira Code
+  palette:
+    # 跟随系统 / 浅色 / 深色，右上角一键切换
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  features:
+    - navigation.instant          # 站内跳转无刷新
+    - navigation.instant.progress # 顶部加载进度条
+    - navigation.tracking         # 地址栏跟随标题
+    - navigation.tabs             # 顶部一级导航
+    - navigation.sections         # 侧边栏分组
+    - navigation.top              # 返回顶部按钮
+    - navigation.footer           # 上一页/下一页
+    - navigation.indexes          # 目录页（index.md 作为分区首页）
+    - search.suggest              # 搜索联想
+    - search.highlight            # 搜索关键词高亮
+    - search.share                # 分享搜索结果
+    - toc.follow                  # 右侧目录跟随滚动
+    - content.code.copy           # 代码块复制按钮
+    - content.code.annotate       # 代码注释标注
+    - content.tooltips            # 悬浮提示
+
+plugins:
+  - search:
+      lang: zh                    # 中文分词搜索
+  - blog:                         # 内置博客：docs/blog/posts/ 下的文章自动成列表
+      post_url_format: "{date}/{slug}"
+  - tags:                         # 标签索引：在 tags.md 里放 <!-- material/tags --> 标记
+      listings: true
+  # - git-revision-date-localized  # 显示最后更新时间（需额外装插件，见 requirements.txt）
+  # - minify                       # 压缩 HTML（需额外装插件）
+
+markdown_extensions:
+  # --- 基础 ---
+  - abbr
+  - admonition                    # 提示块 !!! note
+  - attr_list                     # 给元素加属性 {.class}
+  - def_list
+  - footnotes                     # 脚注[^1]
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true             # 标题悬停出现 ¶ 锚点
+      toc_depth: 3
+
+  # --- PyMdown 扩展（Material 强烈推荐）---
+  - pymdownx.details              # ??? note 可折叠提示块
+  - pymdownx.superfences:         # 代码块增强 + mermaid 图表
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:              # === "标签页" 分组内容
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets             # 从外部文件嵌入内容 --8<--
+  - pymdownx.keys                 # 键盘按键 ++ctrl+c++
+  - pymdownx.mark                 # ==高亮==
+  - pymdownx.caret                # ^上标^
+  - pymdownx.tilde                # ~下标~
+  - pymdownx.smartsymbols
+  - pymdownx.arithmatex:          # 数学公式
+      generic: true
+  - pymdownx.emoji:               # emoji 与图标
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/qq2568520309-ai
+      name: GitHub
+  generator: false               # 隐藏页脚 "Made with Material for MkDocs"
+
+# 导航：改这里就能调整侧边栏结构
+nav:
+  - 首页: index.md
+  - 使用指南:
+      - guide/index.md
+      - 三步上手: guide/quickstart.md
+      - 常用语法速查: guide/syntax.md
+      - 配置说明: guide/config.md
+      - 发布到 GitHub Pages: guide/deploy.md
+  - 博客: blog/index.md
+  - 标签: tags.md
