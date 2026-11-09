@@ -35,6 +35,8 @@ jobs:
         run: mkdocs build --strict   # --strict: 有死链/警告就让构建失败
 
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true   # 若仓库还没启用 Pages，自动帮你开启（无需手动点设置）
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
