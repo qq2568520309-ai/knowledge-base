@@ -131,5 +131,28 @@ nav:
       - 常用语法速查: guide/syntax.md
       - 配置说明: guide/config.md
       - 发布到 GitHub Pages: guide/deploy.md
+  - C++ 知识集:
+      - cpp/index.md
+      - 语言基础:
+          - 基础语法与类型系统: cpp/basics.md
+          - 指针、引用与 const: cpp/pointers.md
+          - 内存模型与对象布局: cpp/memory.md
+      - 面向对象:
+          - 类与对象: cpp/classes.md
+          - 继承、多态与对象模型: cpp/oop.md
+      - STL 与模板:
+          - STL 容器: cpp/stl-containers.md
+          - STL 算法与 lambda: cpp/stl-algorithms.md
+          - 模板与泛型编程: cpp/templates.md
+      - 现代 C++ 与并发:
+          - 现代 C++ 特性: cpp/modern-cpp.md
+          - 多线程与并发: cpp/concurrency.md
+      - 工程与性能:
+          - 编译、链接与构建: cpp/build.md
+          - 性能优化与调试: cpp/performance.md
+      - 面试冲刺:
+          - 八股 · 基础篇: cpp/interview-basics.md
+          - 八股 · 进阶篇: cpp/interview-advanced.md
+          - 手撕代码题库: cpp/handwritten.md
   - 博客: blog/index.md
   - 标签: tags.md

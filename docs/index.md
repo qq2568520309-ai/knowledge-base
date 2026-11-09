@@ -11,6 +11,14 @@ hide:
 
 <div class="grid cards" markdown>
 
+-   :material-language-cpp:{ .lg .middle } **C++ 知识集**
+
+    ---
+
+    从基础语法到对象模型、STL、模板、现代 C++、并发与性能，附面试八股与手撕代码。
+
+    [:octicons-arrow-right-24: 进入知识集](cpp/index.md)
+
 -   :material-rocket-launch-outline:{ .lg .middle } **三步上手**
 
     ---

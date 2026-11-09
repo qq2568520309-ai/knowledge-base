@@ -36,6 +36,7 @@ mkdocs build --strict
 ├── docs/
 │   ├── index.md                # 首页
 │   ├── guide/                  # 使用指南分区
+│   ├── cpp/                    # C++ 知识集（基础 → 进阶 → 面试）
 │   ├── blog/
 │   │   ├── index.md            # 博客列表页（由 blog 插件填充）
 │   │   └── posts/              # 博客文章，文件名即 URL
